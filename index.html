@@ -17,6 +17,35 @@
             --gradient-red: linear-gradient(45deg, var(--accent-red), var(--accent-pink));
         }
 
+        
+body {
+  --sb-track-color: #1a1a1a;
+  --sb-thumb-color: #ff1a4f;
+  --sb-size: 6px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
         * {
             margin: 0;
             padding: 0;
